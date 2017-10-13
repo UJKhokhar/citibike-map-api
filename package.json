@@ -1,0 +1,11 @@
+{
+  "name": "citibike-api",
+  "version": "1.0.0",
+  "description": "Simple backend that sends citibike trip data",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Umar Khokhar",
+  "license": "ISC"
+}
