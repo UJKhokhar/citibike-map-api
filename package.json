@@ -10,6 +10,7 @@
   "author": "Umar Khokhar",
   "license": "ISC",
   "dependencies": {
+    "body-parser": "^1.18.2",
     "csvtojson": "^1.1.9",
     "decompress": "^4.2.0",
     "express": "^4.16.2",
