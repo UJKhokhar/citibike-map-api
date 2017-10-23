@@ -2,3 +2,4 @@ node_modules/
 tripdata.zip
 imptcmds.txt
 tripdata/201709-citibike-tripdata.csv
+.DS_Store

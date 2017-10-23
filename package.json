@@ -5,7 +5,8 @@
   "main": "server.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "nodemon server.js --exec babel-node"
+    "start": "nodemon server.js --exec babel-node",
+    "script": "nodemon getRoutes.js --exec babel-node"
   },
   "author": "Umar Khokhar",
   "license": "ISC",
@@ -17,7 +18,8 @@
     "express": "^4.16.2",
     "lodash": "^4.17.4",
     "moment": "^2.19.1",
-    "mongodb": "^2.2.33"
+    "mongodb": "^2.2.33",
+    "osrm": "^5.12.0"
   },
   "devDependencies": {
     "babel-cli": "^6.26.0",

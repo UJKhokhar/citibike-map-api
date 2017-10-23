@@ -1,5 +1,6 @@
 // import _ from 'lodash';
 import getTrips from './findTrip';
+import getRoute from './routes';
 
 const express = require('express');
 const bodyParser = require('body-parser');
@@ -15,7 +16,6 @@ app.options('*', cors());
 
 app.use(bodyParser.json());
 
-
 app.listen(3030, () => {
   console.log('Started on port 3030');
 });
@@ -23,9 +23,17 @@ app.listen(3030, () => {
 app.post('/trips', cors(corsOptions), (req, res) => {
   getTrips(req.body.date, req.body.time)
     .then((trips) => {
-      res.send(trips);
+      console.log('Number of trips:', trips.length);
+
+      const routesPromises = trips
+        .map(trip => {
+          const routePromise = getRoute(trip);
+          return routePromise;
+        });
+
+      return Promise.all(routesPromises);
     })
-    .catch((err) => {
-      res.send(err);
+    .then(results => {
+      res.send(results);
     });
 });
