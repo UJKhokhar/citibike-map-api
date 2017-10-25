@@ -4,3 +4,4 @@ imptcmds.txt
 tripdata/201709-citibike-tripdata.csv
 .DS_Store
 new_york_data
+dist/
