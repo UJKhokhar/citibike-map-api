@@ -1,3 +1,0 @@
-*.osm.pbf filter=lfs diff=lfs merge=lfs -text
-*.osrm filter=lfs diff=lfs merge=lfs -text
-*.osrm.hsgr filter=lfs diff=lfs merge=lfs -text
