@@ -6,11 +6,11 @@ Object.defineProperty(exports, "__esModule", {
 exports.default = getRoute;
 var OSRM = require('osrm');
 
-var foo = new OSRM('./new_york_data/new-york_new-york.osrm');
+var osrmConnect = new OSRM('./nyc_data/nyc_data.osrm');
 
 function getRoute(trip) {
   return new Promise(function (resolve, reject) {
-    foo.route({
+    osrmConnect.route({
       coordinates: [[trip['start station longitude'], trip['start station latitude']], [trip['end station longitude'], trip['end station latitude']]],
       geometries: 'geojson'
     }, function (err, result) {
