@@ -8,7 +8,10 @@
     "clean": "rimraf dist",
     "serve": "nodemon index.js --exec babel-node",
     "build": "npm run clean && babel lib -d dist",
-    "start": "node dist/index.js"
+    "start": "node dist/index.js",
+    "osrm-extract": "node_modules/osrm/lib/binding/osrm-extract ./nyc_data/nyc_data.osm.pbf -p node_modules/osrm/profiles/bicycle.lua",
+    "osrm-contract": "node_modules/osrm/lib/binding/osrm-contract nyc_data/nyc_data.osrm",
+    "heroku-postbuild": "npm run osrm-extract && npm run osrm-contract"
   },
   "author": "Umar Khokhar",
   "license": "ISC",
