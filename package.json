@@ -2,12 +2,12 @@
   "name": "citibike-api",
   "version": "1.0.0",
   "description": "Simple backend that sends citibike trip data",
-  "main": "index.js",
+  "main": "lib/index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "clean": "rimraf dist",
-    "serve": "nodemon index.js --exec babel-node",
-    "build": "npm run clean && babel lib -d dist",
+    "serve": "nodemon lib/index.js --exec babel-node",
+    "build": "npm run clean && NODE_ENV='production' babel lib -d dist",
     "start": "node dist/index.js",
     "osrm-extract": "node_modules/osrm/lib/binding/osrm-extract ./nyc_data/nyc_data.osm.pbf -p node_modules/osrm/profiles/bicycle.lua",
     "osrm-contract": "node_modules/osrm/lib/binding/osrm-contract nyc_data/nyc_data.osrm",
@@ -22,7 +22,6 @@
     "decompress": "^4.2.0",
     "express": "^4.16.2",
     "lodash": "^4.17.4",
-    "moment": "^2.19.1",
     "mongodb": "^2.2.33",
     "osrm": "^5.12.0"
   },

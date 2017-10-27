@@ -3,4 +3,5 @@ tripdata.zip
 imptcmds.txt
 tripdata/201709-citibike-tripdata.csv
 .DS_Store
-new_york_data/
+nyc_data/nyc_data.osrm*
+db_trips_backup.json

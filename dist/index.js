@@ -18,8 +18,10 @@ var cors = require('cors');
 
 var app = express();
 
+var origin = process.env.NODE_ENV === 'production' ? 'https://ujkhokhar.github.io/citibike-map/' : 'http://localhost:8080';
+
 var corsOptions = {
-  origin: 'http://localhost:8080'
+  origin: origin
 };
 
 app.options('*', cors());
