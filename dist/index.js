@@ -18,10 +18,16 @@ var cors = require('cors');
 
 var app = express();
 
-var origin = process.env.NODE_ENV === 'production' ? 'https://ujkhokhar.github.io/citibike-map/' : 'http://localhost:8080';
+var whitelist = ['https://ujkhokhar.github.io', 'http://localhost:8080'];
 
 var corsOptions = {
-  origin: origin
+  origin: function origin(_origin, callback) {
+    if (whitelist.indexOf(_origin) !== -1) {
+      callback(null, true);
+    } else {
+      callback(new Error('Not allowed by CORS'));
+    }
+  }
 };
 
 app.options('*', cors());

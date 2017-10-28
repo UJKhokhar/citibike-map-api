@@ -7,7 +7,7 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "clean": "rimraf dist",
     "serve": "nodemon lib/index.js --exec babel-node",
-    "build": "npm run clean && NODE_ENV='production' babel lib -d dist",
+    "build": "npm run clean && babel lib -d dist",
     "start": "node dist/index.js",
     "osrm-extract": "node_modules/osrm/lib/binding/osrm-extract ./nyc_data/nyc_data.osm.pbf -p node_modules/osrm/profiles/bicycle.lua",
     "osrm-contract": "node_modules/osrm/lib/binding/osrm-contract nyc_data/nyc_data.osrm",
