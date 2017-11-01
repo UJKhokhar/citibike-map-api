@@ -10,8 +10,8 @@ var _require = require('mongodb'),
 
 var url = process.env.MONGODB_URI || 'mongodb://localhost:27017/CitibikeTrips';
 
-function getTrips(date, time) {
-  var formattedDate = new Date(date + 'T' + time + 'Z');
+function getTrips(dateAndTime) {
+  var formattedDate = new Date(dateAndTime);
   return MongoClient.connect(url).then(function (db) {
     return db.collection('trips').find({
       starttime: { $lte: formattedDate },

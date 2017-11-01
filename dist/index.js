@@ -18,7 +18,7 @@ var cors = require('cors');
 
 var app = express();
 
-var whitelist = ['https://ujkhokhar.github.io', 'http://localhost:8080'];
+var whitelist = ['https://ujkhokhar.github.io', 'http://localhost:8080', 'http://localhost:8081'];
 
 var corsOptions = {
   origin: function origin(_origin, callback) {
@@ -39,7 +39,7 @@ app.listen(port, function () {
 });
 
 app.post('/trips', cors(corsOptions), function (req, res) {
-  (0, _getTrips2.default)(req.body.date, req.body.time).then(function (trips) {
+  (0, _getTrips2.default)(req.body.dateAndTime).then(function (trips) {
     var routesPromises = trips.map(function (trip) {
       var routePromise = (0, _getRoute2.default)(trip);
       return routePromise;
