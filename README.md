@@ -14,7 +14,9 @@ Run `npm install`.
 
 Download the trip data. You can use the script I created by running `node scripts/download.js` to download the data for September 2017.
 
-Setup a local instance of MongoDB and import the CSV into the DB by running the following command in your Mongo bin directory.
+Setup a local instance of MongoDB and import the CSV into the DB by running the following command in your Mongo bin directory:
+
+`./mongoimport --host=127.0.0.1 -d [DatabaseName] -c [CollectionName] --type csv --file [PathToCSV] --headerline`
 
 You'll need to update the Date field in every document in the collection and convert it from a string into an actual date object. You can check out the `scripts/updatedb.js` for an example of how to do so.
 
